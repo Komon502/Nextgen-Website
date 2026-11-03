@@ -80,7 +80,7 @@ $line_icon = '<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor
   <header class="site-header">
     <div class="wrap header-row">
       <a href="#top" class="brand">
-        <img src="image/logo.png" alt="NextGen Unemployed" height="40">
+        <img class="logo" src="image/logo.png" alt="NextGen Unemployed" height="40">
       </a>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">เมนู</button>
       <nav class="nav" id="nav" aria-label="เมนูหลัก">
