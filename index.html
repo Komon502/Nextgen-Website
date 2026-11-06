@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NextGen Unemployed - High-Performance Web & App Development</title>
+  <meta name="description" content="ทีมนักพัฒนา 5 คน ประสบการณ์ 5+ ปี รับทำเว็บไซต์ แอปพลิเคชัน ออกแบบ UI/UX และระบบหลังบ้านองค์กร">
+  <link rel="icon" href="image/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Particle / Constellation Canvas Background -->
+  <canvas id="canvas-bg"></canvas>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a href="#top" class="brand" aria-label="NextGen Unemployed">
+        <img src="image/logo.png" alt="NextGen Unemployed" width="165" height="48">
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">เมนู</button>
+      <nav class="nav" id="nav" aria-label="เมนูหลัก">
+        <a href="#services">บริการ</a>
+        <a href="#builder">จัดสเปกงาน</a>
+        <a href="#process">ขั้นตอน</a>
+        <a href="#stack">เทคโนโลยี</a>
+        <a href="#faq">คำถามที่พบบ่อย</a>
+        <a href="#contact">ติดต่อ</a>
+      </nav>
+      <div class="header-actions">
+        <!-- SFX Toggle Button -->
+        <button class="sfx-toggle" id="sfx-toggle" type="button" title="เปิด/ปิดเสียงเอฟเฟกต์ Cyber SFX" aria-label="สลับเสียงเอฟเฟกต์">
+          <svg class="sfx-icon sfx-on" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+          <svg class="sfx-icon sfx-off" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+          <span class="sfx-label">SFX: ON</span>
+        </button>
+
+        <a class="header-cta" href="https://lin.ee/rmQq8nq" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.952 12.438c0-4.419-4.43-8.013-9.875-8.013S.202 8.019.202 12.438c0 3.961 3.512 7.281 8.255 7.908.321.069.759.212.87.487.1.25.065.641.032.894l-.14.843c-.043.25-.199.978.857.533 1.056-.445 5.698-3.356 7.772-5.744 1.433-1.572 2.104-3.168 2.104-4.921z"/></svg>
+          <span>LINE Official</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            <span>NEXT-GEN FULLSTACK SQUAD</span>
+          </div>
+          <h1>รับทำเว็บไซต์ แอปพลิเคชัน<br><span class="brush-accent">และออกแบบ UI/UX</span></h1>
+          <p class="lead">
+            เราคือทีมนักพัฒนา 5 คน ประสบการณ์สายตรง 5 ปีขึ้นไป เชี่ยวชาญการสร้างสรรค์ตั้งแต่หน้าเว็บ Landing Page ความเร็วสูง, เว็บแอปพลิเคชัน, โมบายล์แอป จนถึงระบบหลังบ้านและ Enterprise ERP
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-cyan" href="#builder">
+              <span>จัดสเปกงาน & ประเมินราคา</span>
+            </a>
+            <a class="btn btn-glass" href="#services">
+              <span>สำรวจบริการของเรา</span>
+              <span>↓</span>
+            </a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <span class="metric-num">5 Devs</span>
+              <span class="metric-label">Core Developers</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-num">5+ Years</span>
+              <span class="metric-label">Field Experience</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-num">100%</span>
+              <span class="metric-label">Clean Codebase</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D Interactive Terminal Card with Live Typewriter -->
+        <aside class="dev-terminal tilt-card" aria-label="สถานะของทีมและข้อมูลโปรเจกต์">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="terminal-dot dot-red"></span>
+              <span class="terminal-dot dot-yellow"></span>
+              <span class="terminal-dot dot-green"></span>
+            </div>
+            <span class="terminal-title">bash ~/nextgen-team/specs.sh</span>
+          </div>
+          <div class="terminal-body">
+            <div class="code-line">
+              <span class="code-prompt">$</span>
+              <div class="code-cmd-wrapper">
+                <span class="code-typing-text" id="code-typing"></span>
+                <span class="code-cursor"></span>
+              </div>
+            </div>
+            <div class="spec-grid">
+              <div class="spec-item">
+                <span class="spec-key">team</span>
+                <span class="spec-val">NextGen Unemployed</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">engineers</span>
+                <span class="spec-val">5 Developers</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">experience</span>
+                <span class="spec-val">5+ Years Industry Experience</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">landing_turnaround</span>
+                <span class="spec-val">1–2 สัปดาห์</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">app_or_erp</span>
+                <span class="spec-val">1–3 เดือน</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">consulting_cost</span>
+                <span class="spec-val">0 THB (ฟรีไม่มีค่าใช้จ่าย)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-key">status</span>
+                <span class="spec-val active-status">READY FOR NEW PROJECTS</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Services Section (Interactive Showcase Console) -->
+    <section class="block tinted" id="services">
+      <div class="wrap">
+        <div class="section-head-clean">
+          <div class="badge-tag">OUR EXPERTISE</div>
+          <h2 class="title-main">บริการที่เราเชี่ยวชาญ</h2>
+          <p class="subtitle-main">คลิกเลือกหมวดหมู่บริการเพื่อดูรายละเอียด ไฮไลต์ฟีเจอร์ และ Stack ที่เราเลือกใช้</p>
+        </div>
+
+        <!-- Interactive Service Console -->
+        <div class="service-console">
+          <!-- Left: Service Category Selectors -->
+          <div class="console-sidebar" role="tablist">
+            <button class="console-tab active" data-tab="web" role="tab" aria-selected="true">
+              <div class="tab-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M3 9h18"/><path d="M7 6.5h.01M10 6.5h.01"/></svg>
+              </div>
+              <div class="tab-info">
+                <h3>เว็บไซต์ทั่วไป & Landing Page</h3>
+                <span>สำหรับบุคคล, ธุรกิจใหม่, พอร์ตโฟลิโอ</span>
+              </div>
+            </button>
+
+            <button class="console-tab" data-tab="corporate" role="tab" aria-selected="false">
+              <div class="tab-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V5h10v15"/><path d="M14 20v-10h6v10"/><path d="M2 20h20"/><path d="M7 8h4M7 12h4M7 16h4"/></svg>
+              </div>
+              <div class="tab-info">
+                <h3>เว็บไซต์องค์กร & ระบบหลังบ้าน</h3>
+                <span>เว็บธุรกิจขนาดกลาง, Dashboard, Admin</span>
+              </div>
+            </button>
+
+            <button class="console-tab" data-tab="mobile" role="tab" aria-selected="false">
+              <div class="tab-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>
+              </div>
+              <div class="tab-info">
+                <h3>แอปพลิเคชัน iOS & Android</h3>
+                <span>Cross-platform ประสิทธิภาพระดับ Native</span>
+              </div>
+            </button>
+
+            <button class="console-tab" data-tab="enterprise" role="tab" aria-selected="false">
+              <div class="tab-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01M11 7h6M11 17h6"/></svg>
+              </div>
+              <div class="tab-info">
+                <h3>ระบบ Enterprise & ERP องค์กร</h3>
+                <span>สเกลใหญ่, คลังสินค้า, จัดการโรงงาน, POS</span>
+              </div>
+            </button>
+
+            <button class="console-tab" data-tab="uiux" role="tab" aria-selected="false">
+              <div class="tab-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="M14 7l3 3"/></svg>
+              </div>
+              <div class="tab-info">
+                <h3>ออกแบบ UI/UX & Design System</h3>
+                <span>Figma Prototype, ออกแบบเพื่อผู้ใช้จริง</span>
+              </div>
+            </button>
+          </div>
+
+          <!-- Right: Live Service Display Window -->
+          <div class="console-display">
+            <!-- Pane 1: Web -->
+            <div class="console-pane active" id="pane-web">
+              <div class="pane-header">
+                <div>
+                  <span class="pane-badge">FAST TURNAROUND • 1–2 สัปดาห์</span>
+                  <h2>เว็บไซต์ทั่วไป & Landing Page</h2>
+                </div>
+                <div class="pane-delivery">ส่งมอบไว โค้ดมาตรฐาน SEO</div>
+              </div>
+              <p class="pane-desc">สร้างความน่าเชื่อถือและความประทับใจแรกให้กับธุรกิจของคุณด้วยหน้าเว็บที่โหลดไว ลื่นไหล สวยงามทุกหน้าจอ และติดอันดับ Google ได้ง่าย</p>
+              
+              <div class="pane-features-grid">
+                <div class="feature-item">
+                  <div class="f-bullet">✔</div>
+                  <div><strong>Landing Page / Portfolio</strong> — สวยสะกดใจ โหลดไวระดับมิลลิวินาที</div>
+                </div>
+                <div class="feature-item">
+                  <div class="f-bullet">✔</div>
+                  <div><strong>ระบบนัดหมายออนไลน์</strong> — จองคิว ดูตารางเวลา แจ้งเตือนอัตโนมัติ</div>
+                </div>
+                <div class="feature-item">
+                  <div class="f-bullet">✔</div>
+                  <div><strong>ร้านค้าออนไลน์ E-Commerce</strong> — เชื่อมบัตรเครดิต, PromptPay, บิลออเดอร์</div>
+                </div>
+                <div class="feature-item">
+                  <div class="f-bullet">✔</div>
+                  <div><strong>Blog & ข่าวสารพร้อม CMS</strong> — อัปเดตเนื้อหาเองได้ง่ายดาย</div>
+                </div>
+              </div>
+
+              <div class="pane-footer">
+                <div class="stack-tagline">
+                  <span>Stack แนะนำ:</span>
+                  <span class="mini-chip">Next.js</span>
+                  <span class="mini-chip">Tailwind CSS</span>
+                  <span class="mini-chip">TypeScript</span>
+                </div>
+                <a class="btn btn-cyan" href="#builder">จัดสเปกบริการนี้ →</a>
+              </div>
+            </div>
+
+            <!-- Pane 2: Corporate -->
+            <div class="console-pane" id="pane-corporate">
+              <div class="pane-header">
+                <div>
+                  <span class="pane-badge">SCALABLE ARCHITECTURE</span>
+                  <h2>เว็บไซต์องค์กร & ระบบหลังบ้าน (Dashboard)</h2>
+                </div>
+                <div class="pane-delivery">Role-Based Security & Realtime</div>
+              </div>
+              <p class="pane-desc">จัดการข้อมูลธุรกิจอย่างเป็นระบบ ปลอดภัย และมีประสิทธิภาพ ด้วยหน้าแอดมินที่ใช้งานง่าย และระบบวิเคราะห์ข้อมูลที่ตอบโจทย์ผู้บริหาร</p>
+              
+              <div class="pane-features-grid">
+                <div class="feature-item">
+                  <div class="f-bullet">✔</div>
+                  <div><strong>เว็บไซต์องค์กร Company Profile</strong> — ภาพลักษณ์พรีเมียม สถาปัตยกรรมมั่นคง</div>
+                </div>
+                <div class="feature-item">
+                  <div class="f-bullet">✔</div>
+                  <div><strong>Admin Dashboard</strong> — จัดการข้อมูล ค้นหาเร็ว กรองข้อมูลหลายระดับ</div>
+                </div>
+                <div class="feature-item">
+                  <div class="f-bullet">✔</div>
+                  <div><strong>ระบบสิทธิ์ผู้ใช้ (RBAC)</strong> — กำหนดการเข้าถึงแต่ละแผนกอย่างแม่นยำ</div>
+                </div>
+                <div class="feature-item">
+                  <div class="f-bullet">✔</div>
+                  <div><strong>กราฟสถิติ & Data Analytics</strong> — ส่งออกรายงาน Excel, PDF ทันที</div>
+                </div>
+              </div>
+
+              <div class="pane-footer">
+                <div class="stack-tagline">
+                  <span>Stack แนะนำ:</span>
+                  <span class="mini-chip">React</span>
+                  <span class="mini-chip">PHP / .NET</span>
+                  <span class="mini-chip">PostgreSQL</span>
+                </div>
+                <a class="btn btn-cyan" href="#builder">จัดสเปกบริการนี้ →</a>
+              </div>
+            </div>
+
+            <!-- Pane 3: Mobile -->
+            <div class="console-pane" id="pane-mobile">
+              <div class="pane-header">
+                <div>
+                  <span class="pane-badge">CROSS-PLATFORM NATIVE</span>
+                  <h2>แอปพลิเคชันมือถือ iOS & Android</h2>
+                </div>
+                <div class="pane-delivery">โค้ดชุดเดียว ครอบคลุมทั้ง 2 แพลตฟอร์ม</div>
+              </div>
+              <p class="pane-desc">พัฒนาด้วย React Native ช่วยให้ได้แอปพลิเคชันคุณภาพระดับ Native ในทั้งสองระบบ ประหยัดต้นทุนและเวลาขึ้น 50% พร้อมเชื่อมระบบ Push Notification</p>
+              
+              <div class="pane-features-grid">
+                <div class="feature-item">
+                  <div class="f-bullet">✔</div>
+                  <div><strong>รองรับ iOS & Android 100%</strong> — นำขึ้น App Store และ Play Store</div>
+                </div>
+                <div class="feature-item">
+                  <div class="f-bullet">✔</div>
+                  <div><strong>ระบบแชต & Real-time Alert</strong> — แจ้งเตือนข้อความและสถานะทันที</div>
+                </div>
+                <div class="feature-item">
+                  <div class="f-bullet">✔</div>
+                  <div><strong>ระบบแผนที่ GPS & Location</strong> — ติดตามตำแหน่งและเส้นทางแม่นยำ</div>
+                </div>
+                <div class="feature-item">
+                  <div class="f-bullet">✔</div>
+                  <div><strong>เชื่อมต่อฮาร์ดแวร์</strong> — กล้องสแกน QR Code, Bluetooth, Biometric Login</div>
+                </div>
+              </div>
+
+              <div class="pane-footer">
+                <div class="stack-tagline">
+                  <span>Stack แนะนำ:</span>
+                  <span class="mini-chip">React Native</span>
+                  <span class="mini-chip">Expo</span>
+                  <span class="mini-chip">Node.js</span>
+                </div>
+                <a class="btn btn-cyan" href="#builder">จัดสเปกบริการนี้ →</a>
+              </div>
+            </div>
+
+            <!-- Pane 4: Enterprise -->
+            <div class="console-pane" id="pane-enterprise">
+              <div class="pane-header">
+                <div>
+                  <span class="pane-badge">HIGH CONCURRENCY & RELIABILITY</span>
+                  <h2>ระบบ Enterprise & ERP องค์กร</h2>
+                </div>
+                <div class="pane-delivery">รองรับผู้ใช้งานหลักพันพร้อมกัน</div>
+              </div>
+              <p class="pane-desc">แก้ปัญหาคอขวดในกระบวนการทำงาน ลดความผิดพลาดของบุคลากรด้วยระบบอัตโนมัติที่เชื่อมโยงคลังสินค้า สายการผลิต และระบบการเงินเข้าด้วยกัน</p>
+              
+              <div class="pane-features-grid">
+                <div class="feature-item">
+                  <div class="f-bullet">✔</div>
+                  <div><strong>ระบบจัดการโรงงาน & การผลิต</strong> — ติดตามรอบการผลิตและสูตรการผลิต</div>
+                </div>
+                <div class="feature-item">
+                  <div class="f-bullet">✔</div>
+                  <div><strong>ระบบคลังสินค้า (WMS) & สต็อก</strong> — เช็คของเข้า-ออกด้วย Barcode/RFID</div>
+                </div>
+                <div class="feature-item">
+                  <div class="f-bullet">✔</div>
+                  <div><strong>ระบบจัดส่ง & โลจิสติกส์</strong> — จัดคิวรถและบริหารการขนส่ง</div>
+                </div>
+                <div class="feature-item">
+                  <div class="f-bullet">✔</div>
+                  <div><strong>เชื่อมต่อ Legacy System & Cloud</strong> — Migrate ฐานข้อมูลเก่าอย่างไร้รอยต่อ</div>
+                </div>
+              </div>
+
+              <div class="pane-footer">
+                <div class="stack-tagline">
+                  <span>Stack แนะนำ:</span>
+                  <span class="mini-chip">.NET / C#</span>
+                  <span class="mini-chip">SQL Server</span>
+                  <span class="mini-chip">Docker</span>
+                </div>
+                <a class="btn btn-cyan" href="#builder">จัดสเปกบริการนี้ →</a>
+              </div>
+            </div>
+
+            <!-- Pane 5: UI/UX -->
+            <div class="console-pane" id="pane-uiux">
+              <div class="pane-header">
+                <div>
+                  <span class="pane-badge">PIXEL-PERFECT DESIGN</span>
+                  <h2>ออกแบบ UI/UX & Design System</h2>
+                </div>
+                <div class="pane-delivery">พร้อมส่งต่องานพัฒนาทันที</div>
+              </div>
+              <p class="pane-desc">ไม่เพียงแต่สวยงาม แต่คำนึงถึงประสบการณ์ของผู้ใช้งาน (User Experience) ทำให้ใช้งานง่าย เพิ่มยอดขาย และลดเวลาในการแก้โค้ดซ้ำซ้อน</p>
+              
+              <div class="pane-features-grid">
+                <div class="feature-item">
+                  <div class="f-bullet">✔</div>
+                  <div><strong>Interactive Figma Prototype</strong> — ทดลองกดใช้งานได้จริงก่อนเขียนโค้ด</div>
+                </div>
+                <div class="feature-item">
+                  <div class="f-bullet">✔</div>
+                  <div><strong>Design System & Component Library</strong> — สี ฟอนต์ ปุ่ม ไอคอนครบชุด</div>
+                </div>
+                <div class="feature-item">
+                  <div class="f-bullet">✔</div>
+                  <div><strong>Responsive ทุกอุปกรณ์</strong> — ออกแบบครอบคลุมทั้ง Desktop และ Mobile</div>
+                </div>
+                <div class="feature-item">
+                  <div class="f-bullet">✔</div>
+                  <div><strong>User Flow & Journey Mapping</strong> — วางขั้นตอนให้ใช้งานง่ายและลื่นไหลที่สุด</div>
+                </div>
+              </div>
+
+              <div class="pane-footer">
+                <div class="stack-tagline">
+                  <span>เครื่องมือ:</span>
+                  <span class="mini-chip">Figma</span>
+                  <span class="mini-chip">Design Tokens</span>
+                  <span class="mini-chip">Prototype</span>
+                </div>
+                <a class="btn btn-cyan" href="#builder">จัดสเปกบริการนี้ →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Project Builder / Spec Generator (แบ่งสีชัดเจน อ่านง่าย) -->
+    <section class="block" id="builder">
+      <div class="wrap">
+        <div class="section-head-clean">
+          <div class="badge-tag">INTERACTIVE PROJECT BUILDER</div>
+          <h2 class="title-main">จัดสเปกงานที่คุณต้องการ</h2>
+          <p class="subtitle-main">ติ๊กเลือกฟีเจอร์ที่อยากได้ ระบบจะสรุปเป็น Blueprint พร้อมส่งให้ทีมงานประเมินราคาผ่าน LINE ได้ทันที</p>
+        </div>
+
+        <div class="builder-box">
+          <div class="builder-columns">
+            <!-- Left: Options Selection -->
+            <div class="builder-inputs">
+              <!-- Step 1: Project Platform -->
+              <div class="builder-group group-platform">
+                <div class="group-header">
+                  <span class="step-badge badge-blue">STEP 1</span>
+                  <label class="group-title">ประเภทของโปรเจกต์</label>
+                </div>
+                <div class="pill-options" id="platform-options">
+                  <button type="button" class="opt-btn active" data-val="เว็บทั่วไป (Landing Page)">เว็บไซต์ทั่วไป</button>
+                  <button type="button" class="opt-btn" data-val="เว็บองค์กร + แอดมิน">เว็บองค์กร + Dashboard</button>
+                  <button type="button" class="opt-btn" data-val="แอปมือถือ iOS & Android">แอปมือถือ iOS/Android</button>
+                  <button type="button" class="opt-btn" data-val="ระบบ Enterprise / ERP">ระบบ Enterprise / ERP</button>
+                  <button type="button" class="opt-btn" data-val="ออกแบบเฉพาะ UI/UX">ออกแบบ UI/UX</button>
+                </div>
+              </div>
+
+              <!-- Step 2: Feature Checkboxes (แบ่งสีชัดเจน) -->
+              <div class="builder-group group-features">
+                <div class="group-header">
+                  <span class="step-badge badge-purple">STEP 2</span>
+                  <label class="group-title">ฟีเจอร์ที่ต้องการ (เลือกได้หลายข้อ)</label>
+                </div>
+                <div class="checkbox-grid">
+                  <label class="check-card">
+                    <input type="checkbox" value="ระบบล็อกอินและสิทธิ์ผู้ใช้" checked>
+                    <span class="check-box"></span>
+                    <span class="check-label">ระบบล็อกอิน & จัดการสิทธิ์</span>
+                  </label>
+                  <label class="check-card">
+                    <input type="checkbox" value="หน้าแดชบอร์ดหลังบ้าน (Admin)" checked>
+                    <span class="check-box"></span>
+                    <span class="check-label">หน้าจัดการหลังบ้าน (Admin)</span>
+                  </label>
+                  <label class="check-card">
+                    <input type="checkbox" value="ระบบชำระเงินออนไลน์ (Payment)">
+                    <span class="check-box"></span>
+                    <span class="check-label">ชำระเงินออนไลน์ (Payment)</span>
+                  </label>
+                  <label class="check-card">
+                    <input type="checkbox" value="แจ้งเตือนผ่าน LINE / Email">
+                    <span class="check-box"></span>
+                    <span class="check-label">แจ้งเตือนผ่าน LINE / Email</span>
+                  </label>
+                  <label class="check-card">
+                    <input type="checkbox" value="ระบบจองคิว / ตารางนัดหมาย">
+                    <span class="check-box"></span>
+                    <span class="check-label">ระบบจองคิว / ตารางนัดหมาย</span>
+                  </label>
+                  <label class="check-card">
+                    <input type="checkbox" value="ระบบแชตสด Real-time">
+                    <span class="check-box"></span>
+                    <span class="check-label">ระบบแชตสด Real-time</span>
+                  </label>
+                  <label class="check-card">
+                    <input type="checkbox" value="ออกรายงาน Excel / PDF">
+                    <span class="check-box"></span>
+                    <span class="check-label">ออกรายงาน Excel / PDF</span>
+                  </label>
+                  <label class="check-card">
+                    <input type="checkbox" value="เชื่อมต่อ API ระบบเดิม (Legacy)">
+                    <span class="check-box"></span>
+                    <span class="check-label">เชื่อมต่อ API กับระบบเดิม</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Step 3: Timeline Expectation -->
+              <div class="builder-group group-timeline">
+                <div class="group-header">
+                  <span class="step-badge badge-amber">STEP 3</span>
+                  <label class="group-title">ระยะเวลาที่คาดหวัง</label>
+                </div>
+                <div class="pill-options" id="timeline-options">
+                  <button type="button" class="opt-btn" data-val="ด่วนที่สุด (1-2 สัปดาห์)">ด่วนที่สุด (1-2 สัปดาห์)</button>
+                  <button type="button" class="opt-btn active" data-val="ตามกำหนดมาตรฐาน (1 เดือน)">มาตรฐาน (~1 เดือน)</button>
+                  <button type="button" class="opt-btn" data-val="โปรเจกต์ขนาดใหญ่ (2-3 เดือน)">โปรเจกต์ใหญ่ (2-3 เดือน)</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Live Blueprint Code Summary (Color Highlighted Syntax) -->
+            <div class="builder-summary">
+              <div class="summary-card">
+                <div class="summary-top">
+                  <div class="terminal-dots">
+                    <span class="terminal-dot dot-red"></span>
+                    <span class="terminal-dot dot-yellow"></span>
+                    <span class="terminal-dot dot-green"></span>
+                  </div>
+                  <span class="summary-file">project_blueprint.json</span>
+                </div>
+                <div class="summary-body">
+                  <pre class="blueprint-code" id="blueprint-output"></pre>
+                </div>
+                <div class="summary-action">
+                  <a class="btn btn-cyan btn-full" id="send-spec-btn" href="#" target="_blank" rel="noopener">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.952 12.438c0-4.419-4.43-8.013-9.875-8.013S.202 8.019.202 12.438c0 3.961 3.512 7.281 8.255 7.908.321.069.759.212.87.487.1.25.065.641.032.894l-.14.843c-.043.25-.199.978.857.533 1.056-.445 5.698-3.356 7.772-5.744 1.433-1.572 2.104-3.168 2.104-4.921z"/></svg>
+                    <span>ส่งสเปกนี้ให้ทีมงานผ่าน LINE ทันที</span>
+                  </a>
+                  <span class="action-note">ปรึกษาและประเมินราคาฟรี ไม่มีค่าใช้จ่าย</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engineering Pipeline Timeline (Color-coded Distinct Phases) -->
+    <section class="block tinted" id="process">
+      <div class="wrap">
+        <div class="section-head-clean">
+          <div class="badge-tag">ENGINEERING PIPELINE</div>
+          <h2 class="title-main">ขั้นตอนการพัฒนา</h2>
+          <p class="subtitle-main">เส้นเวลาการดำเนินงานตั้งแต่เริ่มคุยโจทย์จนถึงการส่งมอบและดูแลต่อเนื่อง</p>
+        </div>
+
+        <div class="timeline-container">
+          <!-- Flow Track Bar with Multi-Color Segments -->
+          <div class="timeline-track">
+            <div class="timeline-progress"></div>
+          </div>
+
+          <div class="timeline-steps">
+            <!-- Step 1: Cyan -->
+            <div class="timeline-node phase-cyan">
+              <div class="node-marker">
+                <span class="node-index">01</span>
+                <span class="node-pulse"></span>
+              </div>
+              <div class="node-content">
+                <span class="node-phase">PHASE 1</span>
+                <h3>คุยโจทย์ & Scope</h3>
+                <p>พูดคุยสรุปเป้าหมาย ฟีเจอร์ที่ต้องการ และขอบเขตงานเบื้องต้น ไม่จำเป็นต้องเตรียมเอกสารทางเทคนิค</p>
+              </div>
+            </div>
+
+            <!-- Step 2: Blue -->
+            <div class="timeline-node phase-blue">
+              <div class="node-marker">
+                <span class="node-index">02</span>
+                <span class="node-pulse"></span>
+              </div>
+              <div class="node-content">
+                <span class="node-phase">PHASE 2</span>
+                <h3>วางแผน & สถาปัตยกรรม</h3>
+                <p>วิเคราะห์ระบบ เลือก Tech Stack ที่เหมาะสม วาง Roadmap ส่งมอบ และเสนอราคาอย่างโปร่งใส</p>
+              </div>
+            </div>
+
+            <!-- Step 3: Purple -->
+            <div class="timeline-node phase-purple">
+              <div class="node-marker">
+                <span class="node-index">03</span>
+                <span class="node-pulse"></span>
+              </div>
+              <div class="node-content">
+                <span class="node-phase">PHASE 3</span>
+                <h3>ออกแบบ & พัฒนา</h3>
+                <p>ขึ้น UI Prototype พร้อมลงมือเขียนโค้ดตามมาตรฐาน มีรายงานอัปเดตงานให้ทดสอบเป็นระยะ</p>
+              </div>
+            </div>
+
+            <!-- Step 4: Emerald -->
+            <div class="timeline-node phase-emerald">
+              <div class="node-marker">
+                <span class="node-index">04</span>
+                <span class="node-pulse"></span>
+              </div>
+              <div class="node-content">
+                <span class="node-phase">PHASE 4</span>
+                <h3>ทดสอบ & ส่งมอบ</h3>
+                <p>ทดสอบความเสถียร ความปลอดภัย และประสิทธิภาพก่อน Deploy ขึ้นระบบจริงพร้อมใช้งาน</p>
+              </div>
+            </div>
+
+            <!-- Step 5: Amber -->
+            <div class="timeline-node phase-amber">
+              <div class="node-marker">
+                <span class="node-index">05</span>
+                <span class="node-pulse"></span>
+              </div>
+              <div class="node-content">
+                <span class="node-phase">PHASE 5</span>
+                <h3>ดูแลต่อเนื่อง</h3>
+                <p>รับประกันแก้บั๊กฟรีจากการพัฒนา พร้อมมีแพ็กเกจช่วยดูแลรักษาระบบและเซิร์ฟเวอร์ต่อเนื่อง</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filterable Interactive Tech Stack Section (แบ่งสีชัดเจน) -->
+    <section class="block" id="stack">
+      <div class="wrap">
+        <div class="section-head-clean">
+          <div class="badge-tag">TECHNOLOGY STACK</div>
+          <h2 class="title-main">เทคโนโลยีที่เราเลือกใช้</h2>
+          <p class="subtitle-main">แบ่งหมวดหมู่ด้วยโทนสีเฉพาะด้าน เพื่อให้อ่านง่ายและค้นหาเครื่องมือที่ต้องการได้อย่างรวดเร็ว</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="stack-filter-tabs">
+          <button class="stack-tab-btn active" data-filter="all">All Stacks</button>
+          <button class="stack-tab-btn tab-btn-cyan" data-filter="frontend">Frontend</button>
+          <button class="stack-tab-btn tab-btn-emerald" data-filter="mobile">Mobile</button>
+          <button class="stack-tab-btn tab-btn-purple" data-filter="backend">Backend & API</button>
+          <button class="stack-tab-btn tab-btn-amber" data-filter="database">Database & Cloud</button>
+        </div>
+
+        <div class="stack-grid">
+          <!-- Frontend: Cyan Color Palette -->
+          <div class="stack-group cat-frontend" data-category="frontend">
+            <div class="stack-title">
+              <span class="cat-indicator"></span>
+              <span>Frontend</span>
+            </div>
+            <div class="stack-items">
+              <span class="tech-chip chip-cyan">Next.js</span>
+              <span class="tech-chip chip-cyan">React</span>
+              <span class="tech-chip chip-cyan">Angular</span>
+              <span class="tech-chip chip-cyan">TypeScript</span>
+              <span class="tech-chip chip-cyan">JavaScript (ES6+)</span>
+              <span class="tech-chip chip-cyan">Tailwind CSS</span>
+              <span class="tech-chip chip-cyan">HTML5 / Modern CSS</span>
+            </div>
+          </div>
+
+          <!-- Mobile: Emerald Green Color Palette -->
+          <div class="stack-group cat-mobile" data-category="mobile">
+            <div class="stack-title">
+              <span class="cat-indicator"></span>
+              <span>Mobile Dev</span>
+            </div>
+            <div class="stack-items">
+              <span class="tech-chip chip-emerald">React Native</span>
+              <span class="tech-chip chip-emerald">Expo</span>
+              <span class="tech-chip chip-emerald">iOS Development</span>
+              <span class="tech-chip chip-emerald">Android Development</span>
+            </div>
+          </div>
+
+          <!-- Backend: Purple Color Palette -->
+          <div class="stack-group cat-backend" data-category="backend">
+            <div class="stack-title">
+              <span class="cat-indicator"></span>
+              <span>Backend & API</span>
+            </div>
+            <div class="stack-items">
+              <span class="tech-chip chip-purple">PHP</span>
+              <span class="tech-chip chip-purple">Node.js</span>
+              <span class="tech-chip chip-purple">.NET / C#</span>
+              <span class="tech-chip chip-purple">Python</span>
+              <span class="tech-chip chip-purple">RESTful API</span>
+              <span class="tech-chip chip-purple">GraphQL</span>
+            </div>
+          </div>
+
+          <!-- Database & DevOps: Amber / Orange Color Palette -->
+          <div class="stack-group cat-database" data-category="database">
+            <div class="stack-title">
+              <span class="cat-indicator"></span>
+              <span>Database & Cloud</span>
+            </div>
+            <div class="stack-items">
+              <span class="tech-chip chip-amber">MySQL</span>
+              <span class="tech-chip chip-amber">PostgreSQL</span>
+              <span class="tech-chip chip-amber">Microsoft SQL Server</span>
+              <span class="tech-chip chip-amber">Redis</span>
+              <span class="tech-chip chip-amber">Docker</span>
+              <span class="tech-chip chip-amber">Cloud / Linux Server</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="block tinted" id="faq">
+      <div class="wrap faq-grid">
+        <div class="faq-sticky">
+          <div class="badge-tag">FAQ</div>
+          <h2 class="title-main">คำถามที่พบบ่อย</h2>
+          <p>รวมทุกคำตอบเกี่ยวกับระยะเวลา ราคา การส่งมอบงาน และบริการหลังการขายเพื่อความสบายใจของคุณ</p>
+        </div>
+
+        <div class="faq-accordion">
+          <details class="faq-box">
+            <summary>ราคาเริ่มต้นเท่าไหร่?</summary>
+            <p>ขึ้นอยู่กับขอบเขตงานและฟังก์ชันที่ต้องการ Landing page เริ่มต้นหลักพัน ส่วนระบบองค์กรหรือ ERP จะคิดตามความซับซ้อนของโมดูล สามารถใช้ระบบจัดสเปกงานข้างบนเพื่อทักมาคุยประเมินราคาก่อนได้ ไม่มีค่าใช้จ่าย</p>
+          </details>
+
+          <details class="faq-box">
+            <summary>ใช้เวลาพัฒนานานแค่ไหน?</summary>
+            <p>เว็บไซต์ทั่วไปใช้เวลาประมาณ 1–2 สัปดาห์ ส่วนระบบ ERP หรือโมบายล์แอปพลิเคชันขนาดใหญ่จะใช้เวลาประมาณ 1–3 เดือน โดยเราจะแจ้งกำหนดการ Roadmap อย่างโปร่งใสก่อนเริ่มงาน</p>
+          </details>
+
+          <details class="faq-box">
+            <summary>ทำแอปได้ทั้ง iOS และ Android ไหม?</summary>
+            <p>ได้แน่นอนครับ เราใช้ React Native ในการพัฒนา ช่วยให้ได้แอปพลิเคชันที่ทำงานได้สมบูรณ์ทั้งสองระบบด้วย Codebase คุณภาพชุดเดียว ประหยัดเวลาและงบประมาณ</p>
+          </details>
+
+          <details class="faq-box">
+            <summary>หลังส่งมอบงานแล้ว มีบริการดูแลต่อไหม?</summary>
+            <p>มีครับ สำหรับบั๊กหรือปัญหาที่เกิดจากการพัฒนา เราแก้ไขให้โดยไม่มีค่าใช้จ่ายเพิ่มเติม และหากต้องการให้ทีมช่วยดูแลเซิร์ฟเวอร์ สำรองข้อมูล หรืออัปเดตฟังก์ชันต่อเนื่อง เรามีแพ็กเกจรายเดือนให้บริการ</p>
+          </details>
+
+          <details class="faq-box">
+            <summary>ต้องเตรียมข้อมูลอะไรก่อนติดต่อทีมงาน?</summary>
+            <p>เพียงเล่าความต้องการ หรือใช้เครื่องมือจัดสเปกงานด้านบนสรุปฟีเจอร์ที่อยากได้ ทีมเราจะช่วยกลั่นกรองและสรุปเป็นสเปกงานพร้อมแนะนำแนวทางที่คุ้มค่าที่สุดให้ครับ</p>
+          </details>
+
+          <details class="faq-box">
+            <summary>ขอดูตัวอย่างผลงานที่เคยทำได้ที่ไหน?</summary>
+            <p>สามารถทักเข้ามาพูดคุยทาง LINE แล้วเราจะส่งพอร์ตโฟลิโอและเคสผลงานที่เกี่ยวข้องให้ดู มีทั้งเว็บองค์กร โมบายล์แอป และระบบ ERP ภายในองค์กรครับ</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="wrap">
+        <div class="cta-box">
+          <h2>พร้อมเริ่มโปรเจกต์ใหม่แล้วหรือยัง?</h2>
+          <p>เล่าไอเดียและความต้องการให้เราฟัง ทีมวิศวกรพร้อมตอบกลับพร้อมข้อเสนอแนะทางเทคนิคและใบเสนอราคาเบื้องต้น ปรึกษาฟรี ไม่มีข้อผูกมัดใดๆ</p>
+          <a class="btn btn-line" href="https://lin.ee/rmQq8nq" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.952 12.438c0-4.419-4.43-8.013-9.875-8.013S.202 8.019.202 12.438c0 3.961 3.512 7.281 8.255 7.908.321.069.759.212.87.487.1.25.065.641.032.894l-.14.843c-.043.25-.199.978.857.533 1.056-.445 5.698-3.356 7.772-5.744 1.433-1.572 2.104-3.168 2.104-4.921z"/></svg>
+            <span>แชตคุยงานผ่าน LINE Official</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <div class="footer-brand-info">
+        <span>&copy; 2026 NextGen Unemployed. Crafted with High Engineering Standards.</span>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">Design By <a href="https://portfolio-poramet-ro.pages.dev/#home" target="_blank" rel="noopener noreferrer" style="color: rgb(255, 215, 0);">Poramet.ro</a></p>
+      </div>
+      <div class="footer-links">
+        <a href="https://lin.ee/rmQq8nq" target="_blank" rel="noopener">LINE Official</a>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
